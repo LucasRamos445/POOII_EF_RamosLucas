@@ -1,0 +1,34 @@
+﻿@model List<Seminario>
+<h2>Seminarios Disponibles</h2>
+
+@if (TempData["Mensaje"] != null)
+{
+    <p style="color:green">@TempData["Mensaje"]</p>
+}
+
+<table border="1">
+    <tr>
+        <th>Curso</th>
+        <th>Horario</th>
+        <th>Capacidad</th>
+        <th></th>
+    </tr>
+    @foreach (var s in Model) 
+    {
+        <tr>
+            <td>@s.NombreCurso</td>
+            <td>@s.HorarioClase</td>
+            <td>@s.Capacidad</td>
+            <td>
+                <a asp-action="Detalle" asp-route-id="@s.CodigoSeminario">
+                    Seleccionar
+                </a>
+            </td>
+        </tr>
+    }
+</table>
+
+
+@{
+    ViewData["Title"] = "Home Page";
+}

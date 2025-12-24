@@ -1,0 +1,54 @@
+﻿@model POOII_EF_RamosLucas.Models.Seminario
+
+@{
+    ViewData["Title"] = "Detalle";
+}
+
+<h1>Detalle</h1>
+
+<div>
+    <h4>Seminario</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CodigoSeminario)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CodigoSeminario)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NombreCurso)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NombreCurso)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.HorarioClase)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.HorarioClase)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Capacidad)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Capacidad)
+        </dd>
+    </dl>
+</div>
+
+
+<h2>Registrar Asistencia</h2>
+
+<form method="post" asp-action="Registrar" asp-controller="Seminario">
+    <div class="input-group mb-3">
+        <input id="CodigoEstudiante" name="CodigoEstudiante" type="text" class="form-control" placeholder="Codigo de Estudiante" aria-label="Codigo de Estudiante">
+        <input type="hidden" asp-for="CodigoSeminario" />
+    </div>
+
+    <button type="submit" class="btn btn-primary mb-3">Enviar</button>
+
+</form>
+<div>
+    <a class="btn btn-secondary" asp-action="Index">Regresar</a>
+</div>
